@@ -1,0 +1,23 @@
+#######################################
+# Syntax Coloring Map For X-NUCLEO-NFC04A1
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+X_Nucleo_NFC04 KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin 		KEYWORD2
+ledOn 		KEYWORD2
+ledOff 		KEYWORD2
+writeURI 	KEYWORD2
+readURI 	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
