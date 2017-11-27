@@ -36,7 +36,7 @@
 
 #ifdef __cplusplus
 #include <Wire.h>
-#include <stream.h>
+#include <Stream.h>
  extern "C" {
 #endif
 
