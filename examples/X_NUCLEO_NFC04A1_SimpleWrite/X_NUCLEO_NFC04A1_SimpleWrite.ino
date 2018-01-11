@@ -1,6 +1,6 @@
 /**
  ******************************************************************************
- * @file    X_NUCLEO_NFC04A1_HelloWorld.ino
+ * @file    X_NUCLEO_NFC04A1_SimpleWrite.ino
  * @author  STMicroelectronics
  * @version V1.0.0
  * @date    22 November 2017
