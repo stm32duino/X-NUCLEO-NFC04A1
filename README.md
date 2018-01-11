@@ -6,7 +6,7 @@ of Arduino connector or directly by the received carrier electromagnetic field.
 
 ## Examples
 
-There is an example with the X-NUCLEO-NFC04A1 library:
+There are 2 examples with the X-NUCLEO-NFC04A1 library:
 * X_NUCLEO_NFC04A1_HelloWorld: This application writes a URI tag on the device. It records an URI.
 
 When the NFC module is started and ready, the message "Sytstem init done!" is displayed on the monitor window.
@@ -16,6 +16,16 @@ You can test this application by connecting it with your smartphone.
 On Android, donwload a NFC Tools. Then start the app, check if NFC is activated
 on your smartphone. Put your smartphone near the tag, you can read it. You can
 write a tag with this app.
+
+* X_NUCLEO_NFC04A1_SimpleWrite: This application writes a NDEF message, containg a URI record, to the tag.
+
+When the NFC module is started and ready, the message "System init done!" is displayed on the monitor window.
+Next, the tag is written with a URI.
+
+You can test this application by tapping the tag with your smartphone.
+On Android, check if NFC is activated on your smartphone.
+Put your smartphone near the tag to read it.
+The prefered Internet Browser is automatically opened with the provided URI.
 
 ## Documentation
 
