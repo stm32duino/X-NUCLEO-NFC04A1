@@ -28,20 +28,13 @@
   ******************************************************************************
   */ 
 
-#include "x_nucleo_nfc04a1_nfctag.h"
-
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __X_NUCLEO_NFC04A1_H
 #define __X_NUCLEO_NFC04A1_H
 
 #ifdef __cplusplus
-#include <Wire.h>
-#include <Stream.h>
  extern "C" {
 #endif
-
-/* Includes ------------------------------------------------------------------*/
-#include "ST25DV/st25dv.h"
 
 /** @addtogroup BSP
   * @{
@@ -66,17 +59,6 @@ typedef enum
 }NFC04A1_Led_E;
 
 /**
- * @brief  NFC04A1 Ack Nack enumerator definition
- */
-typedef enum 
-{
-  I2CANSW_ACK = 0,
-  I2CANSW_NACK
-}NFC04A1_I2CANSW_E;
-
-
-
-/**
  * @brief  NFC04A1 Led structure definition
  */
  
@@ -89,15 +71,6 @@ typedef struct
   * @}
   */
 /* Exported constants --------------------------------------------------------*/
-/** @defgroup X_NUCLEO_NFC04A1_Exported_Constants
-  * @{
-  */
-#define ST25DV_I2C_SPEED                  NFC04A1_ST25DV_I2C_SPEED_1M
-#define NFC04A1_I2C_TIMEOUT               ST25DV_I2C_TIMEOUT
-/**
-  * @}
-  */
-
 /* External variables --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
@@ -109,14 +82,6 @@ void NFC04A1_LED_DeInit( NFC04A1_Led_E led );
 void NFC04A1_LED_ON( const NFC04A1_Led_E led );
 void NFC04A1_LED_OFF( const NFC04A1_Led_E led );
 void NFC04A1_LED_Toggle( const NFC04A1_Led_E led );
-void NFC04A1_GPO_Init( void );
-void NFC04A1_GPO_DeInit( void );
-uint8_t NFC04A1_GPO_ReadPin( void );
-void NFC04A1_LPD_Init( void );
-void NFC04A1_LPD_DeInit( void );
-uint8_t NFC04A1_LPD_ReadPin( void );
-void NFC04A1_LPD_WritePin( uint8_t LpdPinState );
-void NFC04A1_SelectI2cSpeed( uint8_t i2cspeedchoice );
 /**
   * @}
   */
