@@ -5,7 +5,7 @@
 #include "BSP/x_nucleo_nfc04a1.h"
 
 class X_Nucleo_NFC04 : public ST25DV {
-    public:
+  public:
     X_Nucleo_NFC04(void);
     int begin();
     void ledOn(int led);

@@ -14,10 +14,10 @@
   * You may not use this file except in compliance with the License.
   * You may obtain a copy of the License at:
   *
-  *        http://www.st.com/myliberty  
+  *        http://www.st.com/myliberty
   *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied,
   * AND SPECIFICALLY DISCLAIMING THE IMPLIED WARRANTIES OF MERCHANTABILITY,
   * FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
@@ -25,7 +25,7 @@
   * limitations under the License.
   *
   ******************************************************************************
-  */ 
+  */
 
 /* Includes ------------------------------------------------------------------*/
 #include "Arduino.h"
@@ -41,12 +41,12 @@
 /* Private typedef -----------------------------------------------------------*/
 /* Private defines -----------------------------------------------------------*/
 /* Private macros ------------------------------------------------------------*/
-/* Private variables ---------------------------------------------------------*/ 
+/* Private variables ---------------------------------------------------------*/
 /* Global variables ----------------------------------------------------------*/
 /** @defgroup X_NUCLEO_NFC04A1_Global_Variables
  * @{
  */
-uint8_t NFC04A1_Led[3] = {  5 , 4 , 2};
+uint8_t NFC04A1_Led[3] = {  5, 4, 2};
 
 /**
  * @}
@@ -64,18 +64,19 @@ uint8_t NFC04A1_Led[3] = {  5 , 4 , 2};
   * @param  None
   * @retval None
   */
-void NFC04A1_LED_Init( void )
+void NFC04A1_LED_Init(void)
 {
-	  for(uint16_t i = 0; i < sizeof(NFC04A1_Led); i++)
-		pinMode(NFC04A1_Led[i], OUTPUT);
- }
+  for (uint16_t i = 0; i < sizeof(NFC04A1_Led); i++) {
+    pinMode(NFC04A1_Led[i], OUTPUT);
+  }
+}
 
 /**
   * @brief  DeInit LEDs.
-  * @param  Led: LED to be de-init. 
+  * @param  Led: LED to be de-init.
   * @note Led DeInit does not disable the GPIO clock nor disable the Mfx
   */
-void NFC04A1_LED_DeInit( NFC04A1_Led_E led )
+void NFC04A1_LED_DeInit(NFC04A1_Led_E led)
 {
 }
 
@@ -84,9 +85,9 @@ void NFC04A1_LED_DeInit( NFC04A1_Led_E led )
   * @param  led : Led to be lit on
   * @retval None
   */
-void NFC04A1_LED_ON( const NFC04A1_Led_E led )
+void NFC04A1_LED_ON(const NFC04A1_Led_E led)
 {
-  digitalWrite( NFC04A1_Led[led], HIGH );
+  digitalWrite(NFC04A1_Led[led], HIGH);
 }
 
 /**
@@ -94,9 +95,9 @@ void NFC04A1_LED_ON( const NFC04A1_Led_E led )
   * @param  led : Led to be lit off
   * @retval None
   */
-void NFC04A1_LED_OFF( const NFC04A1_Led_E led )
+void NFC04A1_LED_OFF(const NFC04A1_Led_E led)
 {
-  digitalWrite( NFC04A1_Led[led], LOW );
+  digitalWrite(NFC04A1_Led[led], LOW);
 }
 
 /**
@@ -104,9 +105,9 @@ void NFC04A1_LED_OFF( const NFC04A1_Led_E led )
   * @param  led : Specifies the Led to be toggled
   * @retval None
   */
-void NFC04A1_LED_Toggle( const NFC04A1_Led_E led )
+void NFC04A1_LED_Toggle(const NFC04A1_Led_E led)
 {
-  digitalWrite( NFC04A1_Led[led], !digitalRead(NFC04A1_Led[led]) );
+  digitalWrite(NFC04A1_Led[led], !digitalRead(NFC04A1_Led[led]));
 }
 
 /**

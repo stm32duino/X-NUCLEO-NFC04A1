@@ -15,10 +15,10 @@
   * You may not use this file except in compliance with the License.
   * You may obtain a copy of the License at:
   *
-  *        http://www.st.com/myliberty  
+  *        http://www.st.com/myliberty
   *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied,
   * AND SPECIFICALLY DISCLAIMING THE IMPLIED WARRANTIES OF MERCHANTABILITY,
   * FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
@@ -26,14 +26,14 @@
   * limitations under the License.
   *
   ******************************************************************************
-  */ 
+  */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __X_NUCLEO_NFC04A1_H
 #define __X_NUCLEO_NFC04A1_H
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
 /** @addtogroup BSP
@@ -51,21 +51,19 @@
 /**
  * @brief  NFC04A1 Led enumerator definition
  */
-typedef enum 
-{
+typedef enum {
   GREEN_LED = 0,
   BLUE_LED,
   YELLOW_LED
-}NFC04A1_Led_E;
+} NFC04A1_Led_E;
 
 /**
  * @brief  NFC04A1 Led structure definition
  */
- 
-typedef struct
-{
+
+typedef struct {
   uint16_t          NFC04A1_LED_PIN;
-}NFC04A1_Led_TypeDef;
+} NFC04A1_Led_TypeDef;
 
 /**
   * @}
@@ -77,11 +75,11 @@ typedef struct
 /** @defgroup ST25DV_NUCLEO_Exported_Functions
   * @{
   */
-void NFC04A1_LED_Init( void );
-void NFC04A1_LED_DeInit( NFC04A1_Led_E led );
-void NFC04A1_LED_ON( const NFC04A1_Led_E led );
-void NFC04A1_LED_OFF( const NFC04A1_Led_E led );
-void NFC04A1_LED_Toggle( const NFC04A1_Led_E led );
+void NFC04A1_LED_Init(void);
+void NFC04A1_LED_DeInit(NFC04A1_Led_E led);
+void NFC04A1_LED_ON(const NFC04A1_Led_E led);
+void NFC04A1_LED_OFF(const NFC04A1_Led_E led);
+void NFC04A1_LED_Toggle(const NFC04A1_Led_E led);
 /**
   * @}
   */
@@ -92,10 +90,10 @@ void NFC04A1_LED_Toggle( const NFC04A1_Led_E led );
 
 /**
   * @}
-  */ 
+  */
 
 #ifdef __cplusplus
-  }
+}
 #endif
 #endif /* __X_NUCLEO_NFC04A1_H */
 
