@@ -33,6 +33,12 @@ On Android, check if NFC is activated on your smartphone.
 Put your smartphone near the tag to read it.
 The prefered Internet Browser is automatically opened with the provided URI.
 
+# Dependencies
+
+The X-NUCLEO-NFC04A1 library requires the following STM32duino library:
+
+* STM32duino ST25DV: https://github.com/stm32duino/ST25DV
+
 ## Documentation
 
 You can find the source files at  
