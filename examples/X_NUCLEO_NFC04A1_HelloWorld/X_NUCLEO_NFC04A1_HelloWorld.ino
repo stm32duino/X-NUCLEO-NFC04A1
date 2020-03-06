@@ -65,6 +65,7 @@ void setup() {
   const char uri_write_message[] = "st.com/st25";       // Uri message to write in the tag
   const char uri_write_protocol[] = URI_ID_0x01_STRING; // Uri protocol to write in the tag
   String uri_write = String(uri_write_protocol) + String(uri_write_message);
+  String uri_read;
 
   // Initialize serial for output.
   SerialPort.begin(115200);
@@ -86,9 +87,7 @@ void setup() {
 
   delay(100);
   
-  String uri_read = X_Nucleo_Nfc04.readURI();
-
-  if(uri_read == NULL) {
+  if(X_Nucleo_Nfc04.readURI(&uri_read)) {
     SerialPort.println("Read failed!");
     while(1);
   }

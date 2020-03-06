@@ -78,6 +78,7 @@ void NFC04A1_LED_Init(void)
   */
 void NFC04A1_LED_DeInit(NFC04A1_Led_E led)
 {
+  UNUSED(led);
 }
 
 /**
