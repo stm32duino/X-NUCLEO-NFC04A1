@@ -76,9 +76,9 @@ void NFC04A1_LED_Init(void)
   * @param  Led: LED to be de-init.
   * @note Led DeInit does not disable the GPIO clock nor disable the Mfx
   */
-void NFC04A1_LED_DeInit(NFC04A1_Led_E led)
+void NFC04A1_LED_DeInit(NFC04A1_Led_E /*led*/)
 {
-  UNUSED(led);
+
 }
 
 /**
