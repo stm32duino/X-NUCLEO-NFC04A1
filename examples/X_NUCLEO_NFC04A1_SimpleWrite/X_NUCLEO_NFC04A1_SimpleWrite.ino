@@ -1,11 +1,11 @@
 /**
  ******************************************************************************
-   @file    X_NUCLEO_NFC07A1_SimpleWrite.ino
+   @file    X_NUCLEO_NFC04A1_SimpleWrite.ino
    @author  STMicroelectronics
    @version V1.0.0
    @date    22 November 2017
    @brief   Arduino test application for the STMicrolectronics
-            X-NUCLEO-NFC07A1. NFC tag based on ST25DV device.
+            X-NUCLEO-NFC04A1. NFC tag based on ST25DV device.
             This application makes use of C++ classes obtained from the C
             components' drivers.
  ******************************************************************************
@@ -57,11 +57,11 @@
 ******************************************************************************
 */
 
-#include "x_nucleo_nfc07.h"
+#include "x_nucleo_nfc04.h"
 
 #define SerialPort      Serial
 #define DEV_I2C         Wire
-X_Nucleo_NFC07 Nfc(12, -1, &DEV_I2C);
+X_Nucleo_NFC04 Nfc(12, -1, &DEV_I2C);
 
 void setup() {
   const char uri_write_message[] = "st.com/st25";       // Uri message to write in the tag
