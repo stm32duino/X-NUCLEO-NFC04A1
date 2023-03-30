@@ -1,11 +1,11 @@
 /**
  ******************************************************************************
-   @file    X_NUCLEO_NFC04A1_HelloWorld.ino
+   @file    X_NUCLEO_NFC07A1_HelloWorld.ino
    @author  STMicroelectronics
    @version V1.0.0
    @date    22 November 2017
    @brief   Arduino test application for the STMicrolectronics
-            X-NUCLEO-NFC04A1. NFC tag based on ST25DV device.
+            X-NUCLEO-NFC07A1. NFC tag based on ST25DV device.
             This application makes use of C++ classes obtained from the C
             components' drivers.
  ******************************************************************************
@@ -53,13 +53,16 @@
   all LED's blink.
 
   You can also use your smartphone to read/write a tag.
-  On Android, donwload a NFC Tools. Then start the app, check if NFC is activated
+  On Android, download a NFC Tools. Then start the app, check if NFC is activated
   on your smartphone. Put your smartphone near the tag, you can read it. You can
   write a tag with this app.
 ******************************************************************************
 */
 
-#include "x_nucleo_nfc04.h"
+#include "x_nucleo_nfc07.h"
+
+#define DEV_I2C Wire
+X_Nucleo_NFC07 Nfc(12, -1, &DEV_I2C);
 
 void setup() {
   const char uri_write_message[] = "st.com/st25";       // Uri message to write in the tag
@@ -67,49 +70,49 @@ void setup() {
   String uri_write = String(uri_write_protocol) + String(uri_write_message);
   String uri_read;
 
-  if (X_Nucleo_Nfc04.begin()) {
+  if (Nfc.begin()) {
     while (1) {
-      X_Nucleo_Nfc04.ledOn(GREEN_LED);
+      Nfc.ledOn(GREEN_LED);
       delay(100);
-      X_Nucleo_Nfc04.ledOff(GREEN_LED);
+      Nfc.ledOff(GREEN_LED);
       delay(100);
     }
   }
-  X_Nucleo_Nfc04.ledOn(GREEN_LED);
+  Nfc.ledOn(GREEN_LED);
 
-  if (X_Nucleo_Nfc04.writeURI(uri_write_protocol, uri_write_message, "")) {
+  if (Nfc.writeURI(uri_write_protocol, uri_write_message, "")) {
     while (1) {
-      X_Nucleo_Nfc04.ledOn(BLUE_LED);
+      Nfc.ledOn(BLUE_LED);
       delay(100);
-      X_Nucleo_Nfc04.ledOff(BLUE_LED);
+      Nfc.ledOff(BLUE_LED);
       delay(100);
     }
   }
 
-  X_Nucleo_Nfc04.ledOn(BLUE_LED);
+  Nfc.ledOn(BLUE_LED);
 
   delay(100);
 
-  if (X_Nucleo_Nfc04.readURI(&uri_read)) {
+  if (Nfc.readURI(&uri_read)) {
     while (1) {
-      X_Nucleo_Nfc04.ledOn(YELLOW_LED);
+      Nfc.ledOn(YELLOW_LED);
       delay(100);
-      X_Nucleo_Nfc04.ledOff(YELLOW_LED);
+      Nfc.ledOff(YELLOW_LED);
       delay(100);
     }
   }
 
-  X_Nucleo_Nfc04.ledOn(YELLOW_LED);
+  Nfc.ledOn(YELLOW_LED);
 
   if (strcmp(uri_read.c_str(), uri_write.c_str()) != 0) {
     while (1) {
-      X_Nucleo_Nfc04.ledOn(GREEN_LED);
-      X_Nucleo_Nfc04.ledOn(BLUE_LED);
-      X_Nucleo_Nfc04.ledOn(YELLOW_LED);
+      Nfc.ledOn(GREEN_LED);
+      Nfc.ledOn(BLUE_LED);
+      Nfc.ledOn(YELLOW_LED);
       delay(100);
-      X_Nucleo_Nfc04.ledOff(GREEN_LED);
-      X_Nucleo_Nfc04.ledOff(BLUE_LED);
-      X_Nucleo_Nfc04.ledOff(YELLOW_LED);
+      Nfc.ledOff(GREEN_LED);
+      Nfc.ledOff(BLUE_LED);
+      Nfc.ledOff(YELLOW_LED);
       delay(100);
     }
   }

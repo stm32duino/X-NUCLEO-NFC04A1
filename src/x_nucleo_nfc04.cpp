@@ -1,15 +1,6 @@
 #include "x_nucleo_nfc04.h"
 #include "Arduino.h"
 
-extern sCCFileInfo CCFileStruct;
-
-// make this instance available in the sketch
-X_Nucleo_NFC04 X_Nucleo_Nfc04;
-
-X_Nucleo_NFC04::X_Nucleo_NFC04(void)
-{
-
-}
 int X_Nucleo_NFC04::begin()
 {
   int ret = 0;
@@ -22,7 +13,8 @@ int X_Nucleo_NFC04::begin()
   ledOn(YELLOW_LED);
   delay(300);
 
-  ret = st25dv.begin(12, 7); // gpo, lpd
+  ret = ST25DV::begin();
+
   if (ret != ST25DV_OK) {
     return ret;
   }
@@ -44,4 +36,31 @@ void X_Nucleo_NFC04::ledOn(int led)
 void X_Nucleo_NFC04::ledOff(int led)
 {
   NFC04A1_LED_OFF((NFC04A1_Led_E) led);
+}
+
+void X_Nucleo_NFC04::NFC04A1_LED_Init(void)
+{
+  for (uint16_t i = 0; i < sizeof(NFC04A1_Led); i++) {
+    pinMode(NFC04A1_Led[i], OUTPUT);
+  }
+}
+
+void X_Nucleo_NFC04::NFC04A1_LED_DeInit(NFC04A1_Led_E led)
+{
+
+}
+
+void X_Nucleo_NFC04::NFC04A1_LED_ON(const NFC04A1_Led_E led)
+{
+  digitalWrite(NFC04A1_Led[led], HIGH);
+}
+
+void X_Nucleo_NFC04::NFC04A1_LED_OFF(const NFC04A1_Led_E led)
+{
+  digitalWrite(NFC04A1_Led[led], LOW);
+}
+
+void X_Nucleo_NFC04::NFC04A1_LED_Toggle(const NFC04A1_Led_E led)
+{
+  digitalWrite(NFC04A1_Led[led], !digitalRead(NFC04A1_Led[led]));
 }

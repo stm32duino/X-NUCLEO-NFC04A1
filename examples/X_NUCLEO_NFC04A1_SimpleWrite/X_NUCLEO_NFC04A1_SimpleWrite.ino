@@ -1,11 +1,11 @@
 /**
  ******************************************************************************
-   @file    X_NUCLEO_NFC04A1_SimpleWrite.ino
+   @file    X_NUCLEO_NFC07A1_SimpleWrite.ino
    @author  STMicroelectronics
    @version V1.0.0
    @date    22 November 2017
    @brief   Arduino test application for the STMicrolectronics
-            X-NUCLEO-NFC04A1. NFC tag based on ST25DV device.
+            X-NUCLEO-NFC07A1. NFC tag based on ST25DV device.
             This application makes use of C++ classes obtained from the C
             components' drivers.
  ******************************************************************************
@@ -53,13 +53,15 @@
   You can use your smartphone to read the tag.
   On Android, check if NFC is activated on your smartphone.
   Put your smartphone near the tag to natively read it.
-  The prefered Internet Browser is automatically opened with the provided URI.
+  The preferred Internet Browser is automatically opened with the provided URI.
 ******************************************************************************
 */
 
-#include "x_nucleo_nfc04.h"
+#include "x_nucleo_nfc07.h"
 
 #define SerialPort      Serial
+#define DEV_I2C         Wire
+X_Nucleo_NFC07 Nfc(12, -1, &DEV_I2C);
 
 void setup() {
   const char uri_write_message[] = "st.com/st25";       // Uri message to write in the tag
@@ -69,20 +71,20 @@ void setup() {
   // Initialize serial for output.
   SerialPort.begin(115200);
 
-  if (X_Nucleo_Nfc04.begin() == 0) {
+  if (Nfc.begin() == 0) {
     SerialPort.println("System Init done!");
-    X_Nucleo_Nfc04.ledOn(GREEN_LED);
+    Nfc.ledOn(GREEN_LED);
   } else {
     SerialPort.println("System Init failed!");
     while (1);
   }
 
-  if (X_Nucleo_Nfc04.writeURI(uri_write_protocol, uri_write_message, "")) {
+  if (Nfc.writeURI(uri_write_protocol, uri_write_message, "")) {
     SerialPort.println("Write failed!");
     while (1);
   }
 
-  X_Nucleo_Nfc04.ledOn(BLUE_LED);
+  Nfc.ledOn(BLUE_LED);
 
 }
 
