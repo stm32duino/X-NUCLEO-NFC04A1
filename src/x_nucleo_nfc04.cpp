@@ -45,7 +45,7 @@ void X_Nucleo_NFC04::NFC04A1_LED_Init(void)
   }
 }
 
-void X_Nucleo_NFC04::NFC04A1_LED_DeInit(NFC04A1_Led_E led)
+void X_Nucleo_NFC04::NFC04A1_LED_DeInit(void)
 {
 
 }

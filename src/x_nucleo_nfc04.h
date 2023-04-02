@@ -26,7 +26,7 @@ class X_Nucleo_NFC04 : public ST25DV {
     void ledOn(int led);
     void ledOff(int led);
     void NFC04A1_LED_Init(void);
-    void NFC04A1_LED_DeInit(NFC04A1_Led_E led);
+    void NFC04A1_LED_DeInit(void);
     void NFC04A1_LED_ON(const NFC04A1_Led_E led);
     void NFC04A1_LED_OFF(const NFC04A1_Led_E led);
     void NFC04A1_LED_Toggle(const NFC04A1_Led_E led);
