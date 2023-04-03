@@ -4,12 +4,6 @@ Arduino library to support the X-NUCLEO-NFC04A1 expansion board. The X-NUCLEO-NF
 the ST25DV04K NFC Type V/RFID tag IC with a dual interface 4 Kbits EEPROM that also features an I²C interface. It can be powered by the pin 
 of Arduino connector or directly by the received carrier electromagnetic field.
 
-## Dependenciy
-
-The X-NUCLEO-NFC04A1 library requires the following STM32duino library:
-
-* STM32duino ST25DV: https://github.com/stm32duino/ST25DV
-
 ## Examples
 
 There are 2 examples with the X-NUCLEO-NFC04A1 library:
@@ -45,4 +39,4 @@ You can find the source files at
 https://github.com/stm32duino/X-NUCLEO-NFC04A1
 
 The ST25DV04K datasheet is available at  
-http://www.st.com/content/st_com/en/products/nfc/st25-nfc-rfid-tags-readers/st25-dynamic-nfc-tags/st25dv-series-dynamic-nfc-tags/st25dv04k.html
+https://www.st.com/resource/en/datasheet/st25dv04k.pdf
